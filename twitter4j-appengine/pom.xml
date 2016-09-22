@@ -99,6 +99,8 @@
             <groupId>org.twitter4j</groupId>
             <artifactId>twitter4j-core</artifactId>
             <version>4.0.5</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../twitter4j-core/target/twitter4j-core-4.0.5.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.google.appengine</groupId>

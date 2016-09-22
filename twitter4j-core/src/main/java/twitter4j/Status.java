@@ -48,8 +48,20 @@ public interface Status extends Comparable<Status>, TwitterResponse,
      */
     String getText();
 
+    /**
+     * Returns the index where the text starts
+     *
+     * @return the index
+     * @since Twitter4J 4.0.5
+     */
     int getDisplayTextRangeStart();
 
+    /**
+     * Returns the position where the text ends
+     *
+     * @return the index
+     * @since Twitter4J 4.0.5
+     */
     int getDisplayTextRangeEnd();
 
     /**

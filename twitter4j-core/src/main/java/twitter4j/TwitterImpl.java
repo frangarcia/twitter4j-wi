@@ -64,7 +64,7 @@ class TwitterImpl extends TwitterBaseImpl implements Twitter {
                 implicitParamsStr += "contributingto=" + conf.getContributingTo();
             }
 
-            List<HttpParameter> params = new ArrayList<HttpParameter>(3);
+            List<HttpParameter> params = new ArrayList<HttpParameter>(4);
             if (conf.isIncludeEntitiesEnabled()) {
                 params.add(new HttpParameter("include_entities", "true"));
             }
@@ -77,9 +77,9 @@ class TwitterImpl extends TwitterBaseImpl implements Twitter {
             if (conf.isIncludeExtAltTextEnabled()) {
                 params.add(new HttpParameter("include_ext_alt_text", "true"));
             }
-            if (conf.isTweetModeExtended()) {
+            //if (conf.isTweetModeExtended()) {
                 params.add(new HttpParameter("tweet_mode", "extended"));
-            }
+            //}
             HttpParameter[] implicitParams = params.toArray(new HttpParameter[params.size()]);
 
             // implicitParamsMap.containsKey() is evaluated in the above if clause.
@@ -584,7 +584,7 @@ class TwitterImpl extends TwitterBaseImpl implements Twitter {
         return super.fillInIDAndScreenName(
                 new HttpParameter[]{new HttpParameter("include_email", conf.isIncludeEmailEnabled())});
     }
-    
+
     @Override
     public AccountSettings updateAccountSettings(Integer trend_locationWoeid,
                                                  Boolean sleep_timeEnabled, String start_sleepTime,
